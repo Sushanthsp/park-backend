@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 const mongoosePaginate = require("mongoose-paginate-v2");
-require("@mongoosejs/double");
 
 const BookingSchema = new Schema(
     {
