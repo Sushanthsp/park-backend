@@ -6,6 +6,7 @@ const { verifyJWTToken } = require("../../middleware/jwt.middleware");
 
 router.post("/bookslot", bookingSlotValidation.book,verifyJWTToken, bookingSlotController.book);
 router.get("/bookslot", bookingSlotValidation.getBooking, bookingSlotController.getBookings);
+router.delete("/bookslot/:id", verifyJWTToken, bookingSlotController.deleteBooking);
 router.get("/test", bookingSlotValidation.getBooking, bookingSlotController.getBookingsBookingSchema);
 
 
