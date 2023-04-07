@@ -87,7 +87,6 @@ module.exports.book = async (request, response, next) => {
     }
 };
 
-
 module.exports.updateBooking = async (request, response, next) => {
     try {
         const { bookingId, vehicleType, dateOfParking, endDateOfParking, vehicleNo } = request.body;
@@ -236,8 +235,8 @@ module.exports.getBookings = async (request, response, next) => {
   
       // Define the query object for filtering
       const query = { isCancelled: false };
-      if (startDate) query.startTime = { $gte: new Date(startDate) };
-      if (endDate) query.endTime = { $lte: new Date(endDate) };
+      if (startDate) query.dateOfParking = { $gte: new Date(startDate) };
+      if (endDate) query.endDateOfParking = { $lte: new Date(endDate) };
       if (slotNumber) query.slotNumber = slotNumber;
   
       // Use the query object to retrieve bookings that match the criteria with pagination
